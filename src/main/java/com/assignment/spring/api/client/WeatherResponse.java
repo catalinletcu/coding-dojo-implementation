@@ -1,9 +1,10 @@
 
-package com.assignment.spring.api;
+package com.assignment.spring.api.client;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -53,7 +54,7 @@ public class WeatherResponse {
     @JsonProperty("cod")
     private Integer cod;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     @JsonProperty("coord")
     public Coord getCoord() {

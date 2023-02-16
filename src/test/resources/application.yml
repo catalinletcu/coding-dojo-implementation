@@ -10,5 +10,5 @@ spring:
 
 weather:
   api:
-    url: "http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={appid}"
-    key: "encodedKey"
+    url: "/weather?q={city}&APPID={appid}"
+    key: "testKey"

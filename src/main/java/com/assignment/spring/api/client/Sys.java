@@ -1,5 +1,5 @@
 
-package com.assignment.spring.api;
+package com.assignment.spring.api.client;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,7 +34,7 @@ public class Sys {
     @JsonProperty("sunset")
     private Integer sunset;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     @JsonProperty("type")
     public Integer getType() {

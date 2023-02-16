@@ -1,5 +1,5 @@
 
-package com.assignment.spring.api;
+package com.assignment.spring.api.client;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +28,7 @@ public class Weather {
     @JsonProperty("icon")
     private String icon;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     @JsonProperty("id")
     public Integer getId() {

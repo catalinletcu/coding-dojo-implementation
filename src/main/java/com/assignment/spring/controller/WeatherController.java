@@ -9,21 +9,22 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
-@Slf4j
 @RequestMapping(value = "weather")
 public class WeatherController {
 
     private final WeatherService weatherService;
 
-    @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<WeatherResponseDto> saveWeather(HttpServletRequest httpRequest) {
-        final String city = httpRequest.getParameter("city");
+    @PostMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<WeatherResponseDto> saveWeather(@Valid @NotNull @RequestParam(value = "city") String city) {
         log.info("Request to save weather for city {} received.", city);
 
         final WeatherResponseDto responseDto = weatherService.saveWeather(city);
