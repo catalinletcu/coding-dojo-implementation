@@ -17,9 +17,9 @@ import org.springframework.web.client.RestTemplate;
 public class WeatherService {
 
     @Value("${weather.api.url}")
-    private String weatherApiUrl;
+    private final String weatherApiUrl;
     @Value("${weather.api.key}")
-    private String weatherApiKey;
+    private final String weatherApiKey;
 
     private final WeatherRepository weatherRepository;
     private final WeatherMapper weatherMapper;
